@@ -96,7 +96,7 @@
                 -o-transition: opacity 1.5s linear 2s;
                 transition: opacity 1.5s linear 2s;
             }
-            
+
             .phase1 .dot {
                 background-image: url("images/phase1-dot.png");
                 background-repeat: no-repeat;
@@ -122,12 +122,12 @@
             }
 
             /** PHASE #2 */
-            
+
             #phase2 {
                 background-color: #fff;
             }
             .phase2 {
-                
+
             }
             .phase2 .bg {
                 background-image: url("images/phase2-bg.png");
@@ -170,7 +170,7 @@
                 -o-transition: margin-left 0.5s linear 2s;
                 transition: margin-left 0.5s linear 2s;
             }
-            
+
             .phase-active .phase2 .bg{
                 opacity: 1;
             }
@@ -395,7 +395,7 @@
                 -o-transition: width 1.5s linear 1s;
                 transition: width 1.5s linear 1s;
             }
-            
+
             .phase-active .phase4 .dot {
                 opacity: 1;
             }
@@ -417,7 +417,7 @@
             }
 
             /** PHASE #5 */
-            
+
             @keyframes animatedBackgroundP5 {
                 0% { background-position: 0 0; }
                 100% { background-position: -467px 0; }
@@ -445,7 +445,7 @@
 
             .phase5 {
             }
-            
+
             .phase5 .bg {
                 display: block;
                 width: 467px;
@@ -505,10 +505,26 @@
                 margin-top: 0px;
             }
 
+            .phase0 {
+                display: block;
+                width: 1px;
+                height: 1px;
+                background-color: #fff;
+                opacity: 0;
+                -webkit-transition: opacity 0.3s linear 0s;
+                -moz-transition: opacity 0.3s linear 0s;
+                -o-transition: opacity 0.3s linear 0s;
+                transition: opacity 0.3s linear 0s;
+            }
+            .phase-active.phase0 {
+                opacity: 1;
+            }
+
         </style>
     </head>
     <body>
         <div class="phase-wrapper">
+            <div id="phase0" class="phase0"></div>
             <a href="#" id="phase1" class="phase pos">
                 <div class="phase1 pos">
                     <span class="pos dot"></span>
@@ -575,8 +591,12 @@
                     setTimeout(phaseLoop, phaseTime);
                 }
 
-                phaseLoop();
-                
+                document.getElementById("phase0").classList.add("phase-active");
+                setTimeout(function () {
+                    document.getElementById("phase0").classList.remove("phase-active");
+                    phaseLoop();
+                }, 300);
+
             })();
         </script>
 

@@ -476,11 +476,27 @@
             .phase-active .phase5 .text2 {
                 margin-top: 0px;
             }
+            
+            .phase0 {
+                display: block;
+                width: 1px;
+                height: 1px;
+                background-color: #fff;
+                opacity: 0;
+                -webkit-transition: opacity 0.3s linear 0s;
+                -moz-transition: opacity 0.3s linear 0s;
+                -o-transition: opacity 0.3s linear 0s;
+                transition: opacity 0.3s linear 0s;
+            }
+            .phase-active.phase0 {
+                opacity: 1;
+            }
 
         </style>
     </head>
     <body>
         <div class="phase-wrapper">
+            <div id="phase0" class="phase0"></div>
             <a href="#" id="phase1" class="phase pos">
                 <div class="phase1 pos">
                     <span class="pos text1"></span>
@@ -545,7 +561,11 @@
                     setTimeout(phaseLoop, phaseTime);
                 }
 
-                phaseLoop();
+                document.getElementById("phase0").classList.add("phase-active");
+                setTimeout(function(){
+                    document.getElementById("phase0").classList.remove("phase-active");
+                    phaseLoop();
+                }, 300);
                 
             })();
         </script>
