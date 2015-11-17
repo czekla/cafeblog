@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .ertekelo-wrapper {
+                display: block;
+                width: 380px;
+                height: 470px;
+                position: relative;
+                background-image: url("images/ertekelo-bg.png");
+                background-repeat: no-repeat;
+                background-position: top center;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                cursor: default;
+            }
+
+            .star-holder {
+                position: absolute;
+                display: block;
+                width: 100px;
+                height: 20px;
+            } 
+            .star-holder-1 {
+                top: 185px;
+                left: 150px;
+            }
+            .star-holder-2 {
+                top: 260px;
+                left: 150px;
+            }
+            .star-holder-3 {
+                top: 333px;
+                left: 150px;
+            }
+            .star {
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-image: url("images/star.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+                float: left;
+            }
+
+            .name {
+                display: block;
+                position: absolute;
+                color: #2c4d75;
+                font-weight: bold;
+                font-size: 13px;
+                line-height: 16px;
+                font-family: "Century Gothic Bold", helvetica, ariel;
+            }
+
+            .name-1 {
+                top: 162px;
+                left: 152px;
+            }
+            .name-2 {
+                top: 236px;
+                left: 152px;
+            }
+            .name-3 {
+                top: 312px;
+                left: 152px;
+            }
+            .btn {
+                display: block;
+                width: 220px;
+                height: 70px;
+                position: absolute;
+                left: 145px;
+                top: 365px;
+                background-image: url("images/btn.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .link {
+                display: block;
+                position: absolute;
+                color: #2c4d75;
+                font-size: 13px;
+                line-height: 16px;
+                font-family: "Century Gothic Regular", helvetica, ariel;
+                left: 195px;
+                top: 435px;
+                text-decoration: none;
+            }
+            .link:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ertekelo-wrapper">
+            <div class="name name-1">Zsuzsanna , 2015 január</div>
+            <div class="star-holder star-holder-1">
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+            </div>
+            <div class="name name-2">Éva , 2013 március</div>
+            <div class="star-holder star-holder-2">
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+            </div>
+            <div class="name name-3">Enikő , 2014 szeptember</div>
+            <div class="star-holder star-holder-3">
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+            </div>
+            <a href="#" target="_blank" class="btn"></a>
+            <a href="#" target="_blank" class="link">Összes értékelés >></a>
+        </div>
+    </body>
+</html>
