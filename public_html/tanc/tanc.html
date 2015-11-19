@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <script>
+            (function ($) {
+                var methods = {
+                    init: function (options) {
+                        this.each(function () {
+                            var defaults = {
+                                autoplay: true
+                            };
+                            var $obj = $(this);
+                            var $options = $.extend(defaults, options);
+
+                            var $phaseimages = $obj.find(".phase-images");
+                            var $imgPrev = $phaseimages.find(".phase-img.prev");
+                            var $imgNext = $phaseimages.find(".phase-img.next");
+
+                            function load_next() {
+                                var $current = $phaseimages.find(".current");
+                                var $current_src = $current.attr("href");
+                                var $next_sib = $current.nextOrFirst();
+                                if ($next_sib.length > 0) {
+                                    var $next_src = $next_sib.attr("href");
+                                    $("<img />").load(function () {
+                                        $current.removeClass("current");
+                                        $next_sib.addClass("current");
+                                        $imgPrev.css("background-image", "url(" + $current_src + ")");
+                                        $imgPrev.css("background-position", "center center");
+
+                                        $imgNext.css("background-image", "url(" + $next_src + ")");
+                                        $imgNext.css("background-position", "center center");
+
+                                        $imgNext.stop().fadeOut(0).fadeIn(1600);
+
+                                        if ($(".current").hasClass("first")) {
+                                            $("#audio")[0].pause();
+                                            $("#audio")[0].currentTime = 0;
+                                            $("#audio")[0].play();
+                                        }
+                                    }).attr("src", $next_src);
+                                }
+                            }
+
+                            var timeout;
+                            function autoplay() {
+
+                                timeout = setTimeout(function () {
+                                    if ($options.autoplay) {
+                                        load_next();
+                                    }
+                                    autoplay();
+                                }, 3640);
+                            }
+
+                            autoplay();
+                            $("#audio")[0].play();
+
+                            return $obj;
+                        });
+                    }
+                };
+
+                jQuery.fn.nextOrFirst = function (selector) {
+                    var next = this.next(selector);
+                    return (next.length) ? next : this.prevAll(selector).last();
+                };
+
+                $.fn.vetito = function (method) {
+                    //method calling logic
+                    if (methods[method])
+                    {
+                        return methods[ method ].apply(this, Array.prototype.slice.call(arguments, 1));
+                    }
+                    else if (typeof method === 'object' || !method)
+                    {
+                        return methods.init.apply(this, arguments);
+                    }
+                    else
+                    {
+                        $.error('Method ' + method + ' does not exist on jQuery.vetito');
+                    }
+                };
+            })(jQuery);
+
+            $(document).ready(function () {
+                $("#gallery").vetito();
+            });
+
+        </script>
+
+        <style>
+            .gallery {
+                display: block;
+                width: 500px;
+                height: 500px;
+                position: relative;
+                margin: 0ps auto;
+                background-color: #000;
+            }
+            .phase-images {
+                display: block;
+                width: 500px;
+                height: 500px;
+                background-color: #000;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            .phase-img {
+                display: block;
+                width: 500px;
+                height: 500px;
+                background-color: #000;
+                background-position: center center;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="gallery" class="gallery">
+            <div class="phase-images">
+                <div class="phase-img prev"></div>
+                <div class="phase-img next" style="background-image: url('images/image01.jpg')"></div>
+                <div style="display: none;">
+                    <a href="images/image01.jpg" class="current first"></a>
+                    <a href="images/image02.jpg"></a>
+                    <a href="images/image03.jpg"></a>
+                    <a href="images/image04.jpg"></a>
+                    <a href="images/image05.jpg"></a>
+
+                    <a href="images/image06.jpg"></a>
+                    <a href="images/image07.jpg"></a>
+                    <a href="images/image08.jpg"></a>
+                    <a href="images/image09.jpg"></a>
+                    <a href="images/image10.jpg"></a>
+
+                    <a href="images/image11.jpg"></a>
+                    <a href="images/image12.jpg"></a>
+                    <a href="images/image13.jpg"></a>
+                    <a href="images/image14.jpg"></a>
+                    <a href="images/image15.jpg"></a>
+
+                    <a href="images/image16.jpg"></a>
+                    <a href="images/image17.jpg"></a>
+                    <a href="images/image18.jpg"></a>
+                    <a href="images/image19.jpg"></a>
+                    <a href="images/image20.jpg"></a>
+
+                    <a href="images/image21.jpg"></a>
+                    <a href="images/image22.jpg"></a>
+                    <a href="images/image23.jpg"></a>
+                    <a href="images/image24.jpg"></a>
+                    <a href="images/image25.jpg"></a>
+                </div>
+            </div>
+            <audio id="audio" loop preload="auto"> 
+                <source src="audio/music.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </body>
+</html>
