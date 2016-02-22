@@ -41,7 +41,7 @@
                 opacity: 1;
             }
 
-            /** PHASE #1 */
+           
             @keyframes animatedBackground {
                 0% { background-position: 0 0; }
                 100% { background-position: -300px 0; }
@@ -83,13 +83,45 @@
                 0% { transform: rotateX(0deg); opacity: 0; }
                 100% { transform: rotateX(-1080deg); opacity: 1; }
             }
-
+            
+            @keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-moz-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-webkit-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-ms-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-o-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            
+            /** PHASE #1 */
             #phase1 {
                 background-color: #fff;
                 
             }
             .phase1 {
-                background-image: url("phase1-bg.png");
+                background-image: url("phase1-300x250-bg.png");
                 background-repeat: repeat;
                 background-position: 0px 0px;
                 animation: animatedBackground 10s linear infinite;
@@ -100,7 +132,7 @@
                 perspective: 3000px;
             }
             .phase1 .title1 {
-                background-image: url("phase1-title.png");
+                background-image: url("phase1-300x250-title.png");
                 background-repeat: no-repeat;
                 background-position: 0px 0px;
                 width: 145px;
@@ -112,7 +144,7 @@
             }
             
             .phase1 .title2 {
-                background-image: url("phase1-title.png");
+                background-image: url("phase1-300x250-title.png");
                 background-repeat: no-repeat;
                 background-position: -150px 0px;
                 width: 150px;
@@ -132,7 +164,7 @@
             }
             
             .phase1 .text {
-                background-image: url("phase1-text.png");
+                background-image: url("phase1-300x250-text.png");
                 background-repeat: no-repeat;
                 background-position: 300px 0px;
                 height: 160px;
@@ -144,7 +176,7 @@
                 transition: background-position 1s linear 0.5s, opacity 1s;
             }
             .phase1 .shape {
-                background-image: url("phase1-shape.png");
+                background-image: url("phase1-300x250-shape.png");
                 background-repeat: no-repeat;
                 height: 80px;
                 top: 170px;
@@ -190,42 +222,11 @@
 
             /** PHASE #2 */
             
-            @keyframes btnAnim {
-                0% { transform: scale(1) }
-                40% { transform: scale(1.1) }
-                80% { transform: scale(0.9) }
-                100% { transform: scale(1) }
-            }
-            @-moz-keyframes btnAnim {
-                0% { transform: scale(1) }
-                40% { transform: scale(1.1) }
-                80% { transform: scale(0.9) }
-                100% { transform: scale(1) }
-            }
-            @-webkit-keyframes btnAnim {
-                0% { transform: scale(1) }
-                40% { transform: scale(1.1) }
-                80% { transform: scale(0.9) }
-                100% { transform: scale(1) }
-            }
-            @-ms-keyframes btnAnim {
-                0% { transform: scale(1) }
-                40% { transform: scale(1.1) }
-                80% { transform: scale(0.9) }
-                100% { transform: scale(1) }
-            }
-            @-o-keyframes btnAnim {
-                0% { transform: scale(1) }
-                40% { transform: scale(1.1) }
-                80% { transform: scale(0.9) }
-                100% { transform: scale(1) }
-            }
-
             #phase2 {
                 background-color: #fff;
             }
             .phase2 {
-                background-image: url("phase2-bg.png");
+                background-image: url("phase2-300x250-bg.png");
                 background-repeat: repeat;
                 background-position: 0px 0px;
                 animation: animatedBackground 10s linear infinite;
@@ -238,7 +239,7 @@
             }
             .phase2 .shape {
                 background-color: #fff;
-                background-image: url("phase2-pen.png");
+                background-image: url("phase2-300x250-pen.png");
                 background-repeat: no-repeat;
                 background-position: 0px 0px;
                 opacity: 1;
@@ -247,7 +248,7 @@
             
              .phase2 .pen {
                 background-color: #fff;
-                background-image: url("phase2-pen.png");
+                background-image: url("phase2-300x250-pen.png");
                 background-repeat: no-repeat;
                 background-position: -210px 0px;
                 opacity: 1;
@@ -263,7 +264,7 @@
             }
 
             .phase2 .text1 {
-                background-image: url("phase2-text1.png");
+                background-image: url("phase2-300x250-text1.png");
                 background-repeat: no-repeat;
                 z-index: 2;
                 opacity: 0;
@@ -275,7 +276,7 @@
             }
 
             .phase2 .text2 {
-                background-image: url("phase2-text2.png");
+                background-image: url("phase2-300x250-text2.png");
                 background-repeat: no-repeat;
                 z-index: 3;
                 opacity: 0;
@@ -304,8 +305,6 @@
             
             /** PHASE #3 */
 
-            
-
             #phase3 {
                 background-color: #bc1c4c;
             }
@@ -314,7 +313,7 @@
             }
             
             .phase3 .bg {
-                background-image: url("phase3-bg.png");
+                background-image: url("phase3-300x250-bg.png");
                 background-repeat: no-repeat;
                 top: -250px;
                 opacity: 1;
@@ -325,7 +324,7 @@
             }
 
             .phase3 .text {
-                background-image: url("phase3-text.png");
+                background-image: url("phase3-300x250-text.png");
                 background-repeat: no-repeat;
                 height: 70px;
                 top: 180px;
@@ -338,7 +337,7 @@
             }
 
             .phase3 .girl {
-                background-image: url("phase3-girl.png");
+                background-image: url("phase3-300x250-girl.png");
                 background-repeat: no-repeat;
                 opacity: 0;
                 -webkit-transition: opacity 1s linear 1.7s;
