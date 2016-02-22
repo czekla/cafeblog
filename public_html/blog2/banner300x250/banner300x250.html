@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cafeblog banner 300x250</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .phase-wrapper {
+                display: block;
+                width: 300px;
+                height: 250px;
+                position: relative;
+                overflow: hidden;
+                color: #000;
+            }
+
+            .phase-wrapper a, .phase-wrapper a:hover, .phase-wrapper a:visited {
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .pos {
+                display: block;
+                width: 300px;
+                height: 250px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .phase {
+                opacity: 0;
+                -webkit-transition: opacity 1.5s;
+                -moz-transition: opacity 1.5s;
+                -o-transition: opacity 1.5s;
+                transition: opacity 1.5s;
+            }
+            .phase-active {
+                opacity: 1;
+            }
+
+            /** PHASE #1 */
+            @keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: -300px 0; }
+            }
+            @-moz-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: -300px 0; }
+            }
+            @-webkit-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: -300px 0; }
+            }
+            @-ms-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: -300px 0; }
+            }
+            @-o-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: -300px 0; }
+            }
+            
+            @keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-moz-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-webkit-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-ms-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-o-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+
+            #phase1 {
+                background-color: #fff;
+                
+            }
+            .phase1 {
+                background-image: url("phase1-bg.png");
+                background-repeat: repeat;
+                background-position: 0px 0px;
+                animation: animatedBackground 10s linear infinite;
+                -moz-animation: animatedBackground 10s linear infinite;
+                -webkit-animation: animatedBackground 10s linear infinite;
+                -ms-animation: animatedBackground 10s linear infinite;
+                -o-animation: animatedBackground 10s linear infinite;
+                perspective: 3000px;
+            }
+            .phase1 .title1 {
+                background-image: url("phase1-title.png");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+                width: 145px;
+                margin-left: -150px;
+                -webkit-transition: margin-left 0.3s linear 0.5s;
+                -moz-transition: margin-left 0.3s linear 0.5s;
+                -o-transition: margin-left 0.3s linear 0.5s;
+                transition: margin-left 0.3s linear 0.5s;
+            }
+            
+            .phase1 .title2 {
+                background-image: url("phase1-title.png");
+                background-repeat: no-repeat;
+                background-position: -150px 0px;
+                width: 150px;
+                height: 80px;
+                margin-left: 150px;
+                -moz-animation-delay: 1s;
+                -webkit-animation-delay: 1s;
+                -ms-animation-delay: 1s;
+                -o-animation-delay: 1s;
+                animation-delay: 1s;
+                opacity: 0;
+                perspective-origin: center center;
+                -webkit-transition: opacity 1.5s linear 1.5s;
+                -moz-transition: opacity 1.5s linear 1.5s;
+                -o-transition: opacity 1.5s linear 1.5s;
+                transition: opacity 1.5s linear 1.5s;
+            }
+            
+            .phase1 .text {
+                background-image: url("phase1-text.png");
+                background-repeat: no-repeat;
+                background-position: 300px 0px;
+                height: 160px;
+                top: 90px;
+                opacity: 0;
+                -webkit-transition: background-position 1.5s linear 0.5s, opacity 1s;
+                -moz-transition: background-position 1.5s linear 0.5s, opacity 1s;
+                -o-transition: background-position 1.5s linear 0.5s, opacity 1s;
+                transition: background-position 1s linear 0.5s, opacity 1s;
+            }
+            .phase1 .shape {
+                background-image: url("phase1-shape.png");
+                background-repeat: no-repeat;
+                height: 80px;
+                top: 170px;
+                opacity: 0;
+                -webkit-transition: opacity 1.5s linear 2s;
+                -moz-transition: opacity 1.5s linear 2s;
+                -o-transition: opacity 1.5s linear 2s;
+                transition: opacity 1.5s linear 2s;
+            }
+
+            .phase-active .phase1{
+
+            }
+            .phase-active .phase1 .title1{
+                margin-left: 0px;
+            }
+            .phase-active .phase1 .title2{
+                opacity: 1;
+                -moz-animation-name: flipText;
+                -moz-animation-duration: 1s;
+                -moz-animation-timing-function: linear;
+                -webkit-animation-name: flipText;
+                -webkit-animation-duration: 1s;
+                -webkit-animation-timing-function: linear;
+                -ms-animation-name: flipText;
+                -ms-animation-duration: 1s;
+                -ms-animation-timing-function: linear;
+                -o-animation-name: flipText;
+                -o-animation-duration: 1s;
+                -o-animation-timing-function: linear;
+                animation-name: flipText;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+            }
+            .phase-active .phase1 .text{
+                background-position: 0px 0px;
+                opacity: 1;
+            }
+            
+            .phase-active .phase1 .shape{
+                opacity: 1;
+            }
+
+            /** PHASE #2 */
+            
+            @keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-moz-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-webkit-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-ms-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-o-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+
+            #phase2 {
+                background-color: #fff;
+            }
+            .phase2 {
+                background-image: url("phase2-bg.png");
+                background-repeat: repeat;
+                background-position: 0px 0px;
+                animation: animatedBackground 10s linear infinite;
+                -moz-animation: animatedBackground 10s linear infinite;
+                -webkit-animation: animatedBackground 10s linear infinite;
+                -ms-animation: animatedBackground 10s linear infinite;
+                -o-animation: animatedBackground 10s linear infinite;
+            }
+            .phase-active .phase2{
+            }
+            .phase2 .shape {
+                background-color: #fff;
+                background-image: url("phase2-pen.png");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+                opacity: 1;
+                height: 90px;
+            }
+            
+             .phase2 .pen {
+                background-color: #fff;
+                background-image: url("phase2-pen.png");
+                background-repeat: no-repeat;
+                background-position: -210px 0px;
+                opacity: 1;
+                height: 90px;
+                width: 390px;
+                margin-left: -90px;
+                z-index: 2;
+                -webkit-transition: margin-left 1s linear 1.5s;
+                -moz-transition: margin-left 1s linear 1.5s;
+                -o-transition: margin-left 1s linear 1.5s;
+                transition: margin-left 1s linear 1.5s;
+                border-radius: 70px 0 0 0;
+            }
+
+            .phase2 .text1 {
+                background-image: url("phase2-text1.png");
+                background-repeat: no-repeat;
+                z-index: 2;
+                opacity: 0;
+                top: 110px;
+                -webkit-transition: opacity 1.5s linear 1s;
+                -moz-transition: opacity 1.5s linear 1s;
+                -o-transition: opacity 1.5s linear 1s;
+                transition: opacity 1.5s linear 1s;
+            }
+
+            .phase2 .text2 {
+                background-image: url("phase2-text2.png");
+                background-repeat: no-repeat;
+                z-index: 3;
+                opacity: 0;
+                top: 110px;
+                -webkit-transition: opacity 1.5s linear 1s;
+                -moz-transition: opacity 1.5s linear 1s;
+                -o-transition: opacity 1.5s linear 1s;
+                transition: opacity 1.5s linear 1s;
+            }
+
+            .phase-active .phase2 .pen{
+                margin-left: 210px;
+            }
+
+            .phase-active .phase2 .text1{
+                opacity: 1;
+            }
+            .phase-active .phase2 .text2{
+                opacity: 1;
+                -moz-animation: btnAnim 0.8s linear 2.5s;
+                -webkit-animation: btnAnim 0.8s linear 2.5s;
+                -ms-animation: btnAnim 0.8s linear 2.5s;
+                -o-animation: btnAnim 0.8s linear 2.5s;
+                animation: btnAnim 0.8s linear 2.5s;
+            }
+            
+            /** PHASE #3 */
+
+            
+
+            #phase3 {
+                background-color: #bc1c4c;
+            }
+
+            .phase3 {
+            }
+            
+            .phase3 .bg {
+                background-image: url("phase3-bg.png");
+                background-repeat: no-repeat;
+                top: -250px;
+                opacity: 1;
+                -webkit-transition: top 0.5s linear 1s;
+                -moz-transition: top 0.5s linear 1s;
+                -o-transition: top 0.5s linear 1s;
+                transition: top 0.5s linear 1s;
+            }
+
+            .phase3 .text {
+                background-image: url("phase3-text.png");
+                background-repeat: no-repeat;
+                height: 70px;
+                top: 180px;
+                opacity: 1;
+                margin-left: 300px;
+                -webkit-transition: margin-left 1s linear 1.5s;
+                -moz-transition: margin-left 1s linear 1.5s;
+                -o-transition: margin-left 1s linear 1.5s;
+                transition: margin-left 1s linear 1.5s;
+            }
+
+            .phase3 .girl {
+                background-image: url("phase3-girl.png");
+                background-repeat: no-repeat;
+                opacity: 0;
+                -webkit-transition: opacity 1s linear 1.7s;
+                -moz-transition: opacity 1s linear 1.7s;
+                -o-transition: opacity 1s linear 1.7s;
+                transition: opacity 1s linear 1.7s;
+            }
+            
+            .phase-active .phase3 .bg{
+                top: 0px;
+            }
+            
+            .phase-active .phase3 .text{
+                margin-left: 0px;
+            }
+            
+            .phase-active .phase3 .girl{
+                opacity: 1;
+            }
+
+            .phase0 {
+                display: block;
+                width: 1px;
+                height: 1px;
+                background-color: #fff;
+                opacity: 0;
+                -webkit-transition: opacity 0.3s linear 0s;
+                -moz-transition: opacity 0.3s linear 0s;
+                -o-transition: opacity 0.3s linear 0s;
+                transition: opacity 0.3s linear 0s;
+            }
+            .phase-active.phase0 {
+                opacity: 1;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="phase-wrapper">
+            <div id="phase0" class="phase0"></div>
+            <a href="#" id="phase1" class="phase pos">
+                <div class="phase1 pos">
+                    <span class="pos title1"></span>
+                    <span class="pos title2"></span>
+                    <span class="pos text"></span>
+                    <span class="pos shape"></span>
+                </div>
+            </a>
+            <a href="#" id="phase2" class="phase pos">
+                <div class="phase2 pos">
+                    <span class="pos shape">
+                        <span class="pos pen"></span>
+                    </span>
+                    <span class="pos text text1"></span>
+                    <span class="pos text text2"></span>
+                </div>
+            </a>
+            <a href="#" id="phase3" class="phase pos">
+                <div class="phase3 pos">
+                    <span class="pos bg"></span>
+                    <span class="pos girl"></span>
+                    <span class="pos text"></span>
+                </div>
+            </a>
+        </div>
+
+        <script>
+            (function () {
+                var phaseTime = 5000;
+
+                var phaseCount = 3;
+
+                var prev = phaseCount;
+                var next = 1;
+
+                function phaseLoop() {
+
+                    document.getElementById("phase" + prev).classList.remove("phase-active");
+                    document.getElementById("phase" + next).classList.add("phase-active");
+
+                    prev = next;
+                    next++;
+                    if (next > phaseCount) {
+                        prev = phaseCount;
+                        next = 1;
+                    }
+
+                    setTimeout(phaseLoop, phaseTime);
+                }
+                
+                document.getElementById("phase0").classList.add("phase-active");
+                setTimeout(function(){
+                    document.getElementById("phase0").classList.remove("phase-active");
+                    phaseLoop();
+                }, 300);
+
+            })();
+        </script>
+
+    </body>
+</html>
