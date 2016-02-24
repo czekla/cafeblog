@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cafeblog banner 640x320</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .phase-wrapper {
+                display: block;
+                width: 640px;
+                height: 320px;
+                position: relative;
+                overflow: hidden;
+                color: #000;
+            }
+
+            .phase-wrapper a, .phase-wrapper a:hover, .phase-wrapper a:visited {
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .pos {
+                display: block;
+                width: 640px;
+                height: 320px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .phase {
+                opacity: 0;
+                -webkit-transition: opacity 1.5s;
+                -moz-transition: opacity 1.5s;
+                -o-transition: opacity 1.5s;
+                transition: opacity 1.5s;
+            }
+            .phase-active {
+                opacity: 1;
+            }
+
+            @keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: 0px 140px; }
+            }
+            @-moz-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: 0px 140px; }
+            }
+            @-webkit-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: 0px 140px; }
+            }
+            @-ms-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: 0px 140px; }
+            }
+            @-o-keyframes animatedBackground {
+                0% { background-position: 0 0; }
+                100% { background-position: 0px 140px; }
+            }
+            
+            @keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-moz-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-webkit-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-ms-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+            @-o-keyframes flipText {
+                0% { transform: rotateX(0deg); opacity: 0; }
+                100% { transform: rotateX(-1080deg); opacity: 1; }
+            }
+
+            @keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-moz-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-webkit-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-ms-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            @-o-keyframes btnAnim {
+                0% { transform: scale(1) }
+                40% { transform: scale(1.1) }
+                80% { transform: scale(0.9) }
+                100% { transform: scale(1) }
+            }
+            
+            /** PHASE #1 */
+            
+            #phase1 {
+                background-color: #fff;
+                
+            }
+            .phase1 {
+                background-image: url("phase1-640x320-bg.png");
+                background-repeat: repeat;
+                background-position: 0px 0px;
+                animation: animatedBackground 5s linear infinite;
+                -moz-animation: animatedBackground 5s linear infinite;
+                -webkit-animation: animatedBackground 5s linear infinite;
+                -ms-animation: animatedBackground 5s linear infinite;
+                -o-animation: animatedBackground 5s linear infinite;
+                perspective: 3000px;
+            }
+            .phase1 .title1 {
+                background-image: url("phase1-640x320-title.png");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+                width: 140px;
+                height: 100px;
+                top: 110px;
+                margin-left: -150px;
+                z-index: 3;
+                -webkit-transition: margin-left 0.3s linear 0.5s;
+                -moz-transition: margin-left 0.3s linear 0.5s;
+                -o-transition: margin-left 0.3s linear 0.5s;
+                transition: margin-left 0.3s linear 0.5s;
+            }
+            
+            .phase1 .title2 {
+                background-image: url("phase1-640x320-title.png");
+                background-repeat: no-repeat;
+                background-position: -140px 0px;
+                width: 140px;
+                height: 100px;
+                top: 110px;
+                margin-left: 140px;
+                -moz-animation-delay: 1s;
+                -webkit-animation-delay: 1s;
+                -ms-animation-delay: 1s;
+                -o-animation-delay: 1s;
+                animation-delay: 1s;
+                opacity: 0;
+                z-index: 3;
+                perspective-origin: center center;
+                -webkit-transition: opacity 1.5s linear 1.5s;
+                -moz-transition: opacity 1.5s linear 1.5s;
+                -o-transition: opacity 1.5s linear 1.5s;
+                transition: opacity 1.5s linear 1.5s;
+            }
+            
+            .phase1 .text {
+                background-image: url("phase1-640x320-text.png");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+                height: 320px;
+                opacity: 0;
+                margin-left: 290px;
+                -webkit-transition: opacity 1.5s linear 1.5s;
+                -moz-transition: opacity 1.5s linear 1.5s;
+                -o-transition: opacity 1.5s linear 1.5s;
+                transition: opacity 1.5s linear 1.5s;
+            }
+            .phase1 .shape {
+                background-image: url("phase1-640x320-shape.png");
+                background-repeat: no-repeat;
+                height: 320px;
+                width: 280px;
+                overflow: hidden;
+            }
+            
+            .phase1 .shape .inner1{
+                background-color: #fff;
+                height: 160px;
+                width: 320px;
+                margin-left: 0px;
+                -webkit-transition: margin-left 1.5s linear 0s;
+                -moz-transition: margin-left 1.5s linear 0s;
+                -o-transition: margin-left 1.5s linear 0s;
+                transition: margin-left 1.5s linear 0s;
+            }
+            
+            .phase1 .shape .inner2{
+                background-color: #fff;
+                height: 160px;
+                width: 320px;
+                margin-left: 0px;
+                top: 160px;
+                -webkit-transition: margin-left 1.5s linear 2s;
+                -moz-transition: margin-left 1.5s linear 2s;
+                -o-transition: margin-left 1.5s linear 2s;
+                transition: margin-left 1.5s linear 2s;
+            }
+
+            .phase-active .phase1{
+
+            }
+            .phase-active .phase1 .title1{
+                margin-left: 0px;
+            }
+            .phase-active .phase1 .title2{
+                opacity: 1;
+                -moz-animation-name: flipText;
+                -moz-animation-duration: 1s;
+                -moz-animation-timing-function: linear;
+                -webkit-animation-name: flipText;
+                -webkit-animation-duration: 1s;
+                -webkit-animation-timing-function: linear;
+                -ms-animation-name: flipText;
+                -ms-animation-duration: 1s;
+                -ms-animation-timing-function: linear;
+                -o-animation-name: flipText;
+                -o-animation-duration: 1s;
+                -o-animation-timing-function: linear;
+                animation-name: flipText;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+            }
+            .phase-active .phase1 .text{
+                opacity: 1;
+            }
+            
+            .phase-active .phase1 .shape .inner1{
+                margin-left: -320px;
+            }
+            .phase-active .phase1 .shape .inner2{
+                margin-left: 320px;
+            }
+
+            /** PHASE #2 */
+
+            #phase2 {
+                background-color: #fff;
+            }
+            .phase2 {
+                background-image: url("phase2-640x320-bg.png");
+                background-repeat: repeat;
+                background-position: 0px 0px;
+                animation: animatedBackground 5s linear infinite;
+                -moz-animation: animatedBackground 5s linear infinite;
+                -webkit-animation: animatedBackground 5s linear infinite;
+                -ms-animation: animatedBackground 5s linear infinite;
+                -o-animation: animatedBackground 5s linear infinite;
+            }
+            .phase-active .phase2{
+            }
+            .phase2 .shape {
+                background-image: url("phase2-640x320-shape.png");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+                opacity: 1;
+                height: 320px;
+                width: 280px;
+                overflow: hidden;
+            }
+            .phase2 .shape .inner{
+                background-color: #fff;
+                opacity: 1;
+                height: 120px;
+                width: 280px;
+                margin-left: 0px;
+                z-index: 2;
+                -webkit-transition: margin-left 1.5s linear 0s;
+                -moz-transition: margin-left 1.5s linear 0s;
+                -o-transition: margin-left 1.5s linear 0s;
+                transition: margin-left 1.5s linear 0s;
+            }
+            
+            .phase2 .shape2 {
+                background-image: url("phase2-640x320-pen.png");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+                height: 320px;
+                width: 240px;
+                overflow: hidden;
+            }
+            
+            .phase2 .shape2 .inner{
+                background-color: #fff;
+                height: 200px;
+                width: 410px;
+                top: 120px;
+                margin-left: -140px;
+                border-radius: 100px;
+                z-index: 2;
+                -webkit-transition: margin-left 1.5s linear 2s;
+                -moz-transition: margin-left 1.5s linear 2s;
+                -o-transition: margin-left 1.5s linear 2s;
+                transition: margin-left 1.5s linear 2s;
+            }
+            
+            .phase2 .pen {
+                background-image: url("phase2-640x320-pen.png");
+                background-repeat: no-repeat;
+                background-position: -210px -120px;
+                height: 200px;
+                width: 140px;
+                top: 120px;
+                margin-left: -140px;
+                z-index: 4;
+                -webkit-transition: margin-left 1.5s linear 2s;
+                -moz-transition: margin-left 1.5s linear 2s;
+                -o-transition: margin-left 1.5s linear 2s;
+                transition: margin-left 1.5s linear 2s;
+            }
+
+            .phase2 .text1 {
+                background-image: url("phase2-640x320-text1.png");
+                background-repeat: no-repeat;
+                z-index: 2;
+                opacity: 0;
+                height: 320px;
+                width: 320px;
+                margin-left: 320px;
+                -webkit-transition: opacity 1.5s linear 1s;
+                -moz-transition: opacity 1.5s linear 1s;
+                -o-transition: opacity 1.5s linear 1s;
+                transition: opacity 1.5s linear 1s;
+            }
+
+            .phase2 .text2 {
+                background-image: url("phase2-640x320-text2.png");
+                background-repeat: no-repeat;
+                z-index: 3;
+                opacity: 0;
+                height: 320px;
+                width: 320px;
+                margin-left: 320px;
+                -webkit-transition: opacity 1.5s linear 1s;
+                -moz-transition: opacity 1.5s linear 1s;
+                -o-transition: opacity 1.5s linear 1s;
+                transition: opacity 1.5s linear 1s;
+            }
+
+            .phase-active .phase2 .shape .inner{
+                margin-left: -280px;
+            }
+            
+            .phase-active .phase2 .shape2 .inner{
+                margin-left: 210px;
+            }
+            
+            .phase-active .phase2 .pen {
+                margin-left: 210px;
+            }
+            
+            .phase-active .phase2 .text1{
+                opacity: 1;
+            }
+            .phase-active .phase2 .text2{
+                opacity: 1;
+                -moz-animation: btnAnim 0.8s linear 3.5s;
+                -webkit-animation: btnAnim 0.8s linear 3.5s;
+                -ms-animation: btnAnim 0.8s linear 3.5s;
+                -o-animation: btnAnim 0.8s linear 3.5s;
+                animation: btnAnim 0.8s linear 3.5s;
+            }
+
+            /** PHASE #3 */
+
+            #phase3 {
+                background-color: #bc1c4c;
+            }
+
+            .phase3 {
+            }
+            
+            .phase3 .bg {
+                background-color: #fff;
+                background-image: url("phase3-640x320-bg.png");
+                background-repeat: no-repeat;
+                background-position: bottom left;
+                width: 310px;
+                height: 320px;
+                top: -320px;
+                opacity: 1;
+                -webkit-transition: top 0.5s linear 1s;
+                -moz-transition: top 0.5s linear 1s;
+                -o-transition: top 0.5s linear 1s;
+                transition: top 0.5s linear 1s;
+            }
+
+            .phase3 .text {
+                background-image: url("phase3-640x320-text.png");
+                background-repeat: no-repeat;
+                width: 320px;
+                height: 320px;
+                opacity: 1;
+                margin-left: 640px;
+                -webkit-transition: margin-left 1s linear 1.5s;
+                -moz-transition: margin-left 1s linear 1.5s;
+                -o-transition: margin-left 1s linear 1.5s;
+                transition: margin-left 1s linear 1.5s;
+            }
+
+            .phase3 .girl {
+                background-image: url("phase3-640x320-girl.png");
+                background-repeat: no-repeat;
+                opacity: 0;
+                -webkit-transition: opacity 1s linear 1.7s;
+                -moz-transition: opacity 1s linear 1.7s;
+                -o-transition: opacity 1s linear 1.7s;
+                transition: opacity 1s linear 1.7s;
+            }
+            
+            .phase-active .phase3 .bg{
+                top: 0px;
+            }
+            
+            .phase-active .phase3 .text{
+                margin-left: 320px;
+            }
+            
+            .phase-active .phase3 .girl{
+                opacity: 1;
+            }
+
+            .phase0 {
+                display: block;
+                width: 1px;
+                height: 1px;
+                background-color: #fff;
+                opacity: 0;
+                -webkit-transition: opacity 0.3s linear 0s;
+                -moz-transition: opacity 0.3s linear 0s;
+                -o-transition: opacity 0.3s linear 0s;
+                transition: opacity 0.3s linear 0s;
+            }
+            .phase-active.phase0 {
+                opacity: 1;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="phase-wrapper">
+            <div id="phase0" class="phase0"></div>
+            <a href="http://cafeblog.hu/vip/" id="phase1" class="phase pos">
+                <div class="phase1 pos">
+                    <span class="pos title1"></span>
+                    <span class="pos title2"></span>
+                    <span class="pos text"></span>
+                    <span class="pos shape">
+                        <span class="inner1 pos"></span>
+                        <span class="inner2 pos"></span>
+                    </span>
+                </div>
+            </a>
+            <a href="http://cafeblog.hu/vip/" id="phase2" class="phase pos">
+                <div class="phase2 pos">
+                    <span class="pos shape">
+                        <span class="pos inner"></span>
+                    </span>
+                    <span class="pos shape2">
+                        <span class="pos inner"></span>
+                    </span>
+                    <span class="pos pen"></span>
+                    <span class="pos text text1"></span>
+                    <span class="pos text text2"></span>
+                </div>
+            </a>
+            <a href="http://cafeblog.hu/vip/" id="phase3" class="phase pos">
+                <div class="phase3 pos">
+                    <span class="pos bg"></span>
+                    <span class="pos girl"></span>
+                    <span class="pos text"></span>
+                </div>
+            </a>
+        </div>
+
+        <script>
+            (function () {
+                var phaseTime = 5000;
+
+                var phaseCount = 3;
+
+                var prev = phaseCount;
+                var next = 1;
+
+                function phaseLoop() {
+
+                    document.getElementById("phase" + prev).classList.remove("phase-active");
+                    document.getElementById("phase" + next).classList.add("phase-active");
+
+                    prev = next;
+                    next++;
+                    if (next > phaseCount) {
+                        prev = phaseCount;
+                        next = 1;
+                    }
+
+                    setTimeout(phaseLoop, phaseTime);
+                }
+
+                document.getElementById("phase0").classList.add("phase-active");
+                setTimeout(function(){
+                    document.getElementById("phase0").classList.remove("phase-active");
+                    phaseLoop();
+                }, 300);
+                
+            })();
+        </script>
+
+    </body>
+</html>
